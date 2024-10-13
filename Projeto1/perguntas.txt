@@ -1,0 +1,27 @@
+É suposto só haver as 3 VLAN's da parte de baixo ? Sim
+Existe algum comando para limpar todas as configs no terminal? Não, vais com NO's que te fodes
+A vlan precisa de ter 2 Ip's, já que a Eng VLAN tem um Ip publico e outro privado? Sim, através do secondary
+é possível fazer ICMP ping do PC da Eng. Public para a Eng.Privada.? Eles não estão na mesma Subnet, mas estão na mesma VLAN? Sim, vai dar para comunicar através do OSPF
+É preciso configurar Default Gateways em que PC's?? Sim, SEMPRE
+
+conf t
+ipv6 unicast-routing
+int f0/0
+ipv6 enable
+ip address 194.4.4.2 255.255.255.224
+ipv6 address 2200:1:1:0::2/64
+no shut
+int f0/1
+ipv6 enable
+ip address 192.168.0.2 255.255.255.0
+ipv6 address 2200:1:1:0::7/64 -- Tá a dar o erro 2200:1:1::7/64 can not be configured on FastEthernet0/1, overlapping
+no shut
+end
+write
+Este erro tem a ver com o facto de ser preciso configurar 2 redes entre o R3 e o R4.
+O melhor é mudar a forma como temos as cenas montadas no GNS3
+
+2º SEMANA
+
+É suposto haver comunicação entre os diferentes PC's privados da rede?? Sim, fizemos bem
+Estão na mesma area OSPF, mas são relativas a secções diferentes (isto é só um problema de intepretação)

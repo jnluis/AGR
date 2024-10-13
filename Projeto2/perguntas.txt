@@ -1,0 +1,15 @@
+Como é que é suposto representar a internet? 
+Não vale a pena fazer mais nada, porque o projeto é na rede em si, a internet não importa aqui
+Estes IP's da ligação do National Provider 1 não deviam ser máscara /30 em vez de /25?
+Tava mal, são /30
+Ligação Aveiro para CompanyA-Aveiro é em OSPF ou BGP? 
+São as 2 em OSPF
+O IPv4 e Ipv6 que estão no router de Vigo são para um LoopBack ou como é que é?
+É só IPv4 para este projeto
+
+
+Dentro do National Provider Portugal, é suposto haver comunicação OSPF ou iBGP?
+Se for OSPF, é suposto ser com Route Maps a ligação entre Coimbra-Lisboa e Aveiro-Porto?
+
+A private connection é suposto correr através de ACL's, ou num túnel proprio?
+Entre que routers e entre que redes é que é suposto ter as ACL's do Diff Serv?
